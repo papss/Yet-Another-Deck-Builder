@@ -8,7 +8,8 @@ class Scryfall
 
   # initialize attributes:
   attr_accessor :id, :arena_id, :name, :set, :rarity, :colors, :mana_cost, :power,
-                :toughness, :legalities, :scryfall_uri, :image_uris
+                :toughness, :legalities, :scryfall_uri, :image_uris, :card_type,
+                :card_text
 
   # associate attributes with JSON response keys:
   def initialize(response)
@@ -24,6 +25,8 @@ class Scryfall
     @legalities = response['legalities']['standard']  #['modern']['legacy']
     @scryfall_uri = response['scryfall_uri']
     @image_uris = response['image_uris']['normal']  #['normal']['large']
+    @card_type = response['type_line']
+    @card_text = response['oracle_text']
   end
 
   # query the API endpoint:

@@ -25,9 +25,9 @@ class DecksController < ApplicationController
   # POST /decks.json
   def create
     @deck = Deck.new(deck_params)
-
     respond_to do |format|
       if @deck.save
+        @deck.cards = ["dummy card"]
         format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
         format.json { render :show, status: :created, location: @deck }
       else
@@ -54,6 +54,7 @@ class DecksController < ApplicationController
   # DELETE /decks/1
   # DELETE /decks/1.json
   def destroy
+    @deck = Deck.find(params[:id])
     @deck.destroy
     respond_to do |format|
       format.html { redirect_to decks_url, notice: 'Deck was successfully destroyed.' }
@@ -69,6 +70,6 @@ class DecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deck_params
-      params.fetch(:deck, {})
+      params.require(:deck).permit(:name, :cards)
     end
 end

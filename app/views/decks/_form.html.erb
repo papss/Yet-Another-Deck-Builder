@@ -1,4 +1,5 @@
-<%= form_with(model: deck, local: true) do |form| %>
+<%= form_with model: @deck do |form| %>
+
   <% if deck.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(deck.errors.count, "error") %> prohibited this deck from being saved:</h2>
@@ -11,7 +12,9 @@
     </div>
   <% end %>
 
+  <%= form.text_field :name %>
   <div class="actions">
     <%= form.submit %>
   </div>
+  
 <% end %>
