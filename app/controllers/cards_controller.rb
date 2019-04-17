@@ -76,6 +76,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.fetch(:card, {})
+      params.require(:card).permit(:scryfall_uri, :deck_id)
     end
 end

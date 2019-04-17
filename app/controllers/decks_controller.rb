@@ -27,7 +27,6 @@ class DecksController < ApplicationController
     @deck = Deck.new(deck_params)
     respond_to do |format|
       if @deck.save
-        @deck.cards = ["dummy card"]
         format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
         format.json { render :show, status: :created, location: @deck }
       else
