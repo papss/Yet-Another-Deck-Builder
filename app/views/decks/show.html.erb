@@ -5,11 +5,31 @@
 <h2>Add a card:</h2>
 
 <div class="container--form-container">
-  <%= form_with url: scryfall_path, method: "get", remote: true, class: "form-inline" do %>
+  <%= form_with url: scryfall_path, method: "get", remote: true, class: "form-inline"  do %>
     <%= text_field_tag :card_name, nil, class: "form-control", placeholder: "Card" %>
-    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-primary", id: "btn-card-search" %>
   <% end %>
 </div>
+
+<div class="container--results-container">
+
+  <% if @card.present? %>
+
+  <% end %>
+
+</div>
+
+<div class="container--deck-container">
+  <% if @deck.cards.empty? %>
+    <h3>No cards in deck.</h3>
+  <% else %>
+    <% @deck.cards.each do |card| %>
+      <h3>card.scryfall_uri</h3>
+    <% end %>
+  <% end %>
+</div>
+
+
 
 <%= link_to 'Edit', edit_deck_path(@deck) %>
 <%= link_to 'Delete', deck_path(@deck), method: :delete, data: { confirm: 'Are you sure?' }%>

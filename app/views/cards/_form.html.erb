@@ -11,7 +11,11 @@
     </div>
   <% end %>
 
+  <%= form.hidden_field_tag :deck, value: @deck %>
+  <%= form.hidden_field_tag :scryfall_uri, value: @card.scryfall_uri %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

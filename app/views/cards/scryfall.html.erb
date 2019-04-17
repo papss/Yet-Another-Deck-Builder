@@ -5,7 +5,7 @@
 <div class="container--form-container">
   <%= form_with url: scryfall_path, method: "get", remote: true, class: "form-inline" do %>
     <%= text_field_tag :card_name, nil, class: "form-control", placeholder: "Card" %>
-    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-primary", id: "btn-card-search" %>
   <% end %>
 </div>
 
@@ -22,6 +22,7 @@
     <p>Legal: <%= @card.legalities %></p>
     <p> <%=link_to "View on Scryfall", @card.scryfall_uri, target: "_blank" %></p>
   <% end %>
+
 </div>
 
 <h2><%= link_to "New Deck", new_deck_path %></h2>
