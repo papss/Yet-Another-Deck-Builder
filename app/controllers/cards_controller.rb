@@ -6,6 +6,7 @@ class CardsController < ApplicationController
 
   def scryfall
     @card = Scryfall.get_card(params[:card_name])
+    render :partial => 'scryfall'
   end
 
   # GET /cards

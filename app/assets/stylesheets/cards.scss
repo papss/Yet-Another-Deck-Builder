@@ -1,6 +1,20 @@
 // Place all the styles related to the Cards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container--results-container {
+  display: flex;
+  align-items: center;
+}
+
+.placeholder--card-picture {
+  display: inline-block;
+}
+
+.placeholder--card-info {
+  display: inline-block;
+  width: 500px;
+  margin-left: 20px;
+}
 
 .card-image {
   height: 510px;

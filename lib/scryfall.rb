@@ -33,10 +33,10 @@ class Scryfall
   def self.get_card(card_name)
     response = get("/cards/named?fuzzy=#{card_name}")
     if response.success?
+      @card = response
       new(response)
     else
-      # use plains as a placeholder fallback
-      response = get("/cards/named?fuzzy=plains")
+      response.response
       new(response)
     end
   end

@@ -10,6 +10,7 @@ $(document).ready(function() {
       data: $(this).serialize(),
       datatype: 'json'
     }).done(function(data) {
+      $('#card-results').html("");
       $('#card-results').prepend(data);
       console.log("rendered partial");
     }).fail(function(data) {
