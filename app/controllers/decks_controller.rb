@@ -1,4 +1,7 @@
 class DecksController < ApplicationController
+
+  require 'scryfall'
+
   before_action :set_deck, only: [:show, :edit, :update, :destroy]
 
   # GET /decks

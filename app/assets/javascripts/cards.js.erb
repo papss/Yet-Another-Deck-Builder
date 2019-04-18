@@ -10,7 +10,8 @@ $(document).ready(function() {
       data: $(this).serialize(),
       datatype: 'json'
     }).done(function(data) {
-      $('card-results').prepend(data)
+      $('#card-results').prepend(data);
+      console.log("rendered partial");
     }).fail(function(data) {
       console.log("didn't work");
     }).always(function() {
