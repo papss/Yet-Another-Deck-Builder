@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_001634) do
+ActiveRecord::Schema.define(version: 2019_04_23_165701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2019_04_17_001634) do
     t.datetime "updated_at", null: false
     t.string "scryfall_uri"
     t.bigint "deck_id"
+    t.string "name"
+    t.string "colors", default: [], array: true
+    t.string "mana_cost"
+    t.string "image_uris"
+    t.string "card_type"
     t.index ["deck_id"], name: "index_cards_on_deck_id"
   end
 

@@ -1,9 +1,13 @@
 <% if @card.present? %>
+
   <div class="placeholder--card-picture">
-    <h2><%= @card.name %></h2>
+
     <%= image_tag("#{@card.image_uris}", :class => "card-image") %>
   </div>
   <div class="placeholder--card-info">
+    <h2><%= @card.name %></h2>
+    <p><%= @card.set %></p>
+    <p><%= @card.mana_cost %></p>
     <h3><%= @card.card_type %></h3>
     <p><%= @card.card_text %></p>
     <p>Rarity: <%= @card.rarity %></p>
@@ -12,6 +16,8 @@
     <p>Toughness: <%= @card.toughness %></p>
     <p>Legal: <%= @card.legalities %></p>
     <p> <%=link_to "View on Scryfall", @card.scryfall_uri, target: "_blank" %></p>
+
+    
   </div>
 
 <% end %>
