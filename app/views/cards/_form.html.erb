@@ -15,6 +15,11 @@
 
   <%= form.hidden_field_tag :deck, value: @deck %>
   <%= form.hidden_field_tag :scryfall_uri, value: @card.scryfall_uri %>
+  <%= form.hidden_field_tag :name, value: @card.name %>
+  <%= form.hidden_field_tag :colors, value: @card.colors %>
+  <%= form.hidden_field_tag :mana_cost, value: @card.mana_cost %>
+  <%= form.hidden_field_tag :image_uris, value: @card.image_uris %>
+  <%= form.hidden_field_tag :card_type, value: @card.card_type %>
 
   <div class="actions">
     <%= form.submit %>
